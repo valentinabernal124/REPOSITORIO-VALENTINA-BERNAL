@@ -1,0 +1,305 @@
+https://github.com/valentinabernal124/REPOSITORIO-VALENTINA-BERNAL.git
+
+
+#############################  FUNCION PRINCIPAL ##################################
+def ingreso():
+    print('BIENVENIDO, ¿QUÉ DESEA HACER?')
+    op=int(input('''1. CONVERTIR TEMPERATURAS
+2. CONVERTIR VOLUMENES
+3. CONVERTIR VELOCIDADES
+4. salir
+'''))
+    if op==1:
+        from TEMPERATURA import temperatura
+        print(temperatura)
+    elif op==2:
+        from VOLUMEN import volumen
+        print(volumen)
+    elif op==3:
+        from VELOCIDAD import tiempo
+        print(tiempo)
+a=ingreso()
+print(ingreso)
+###########################################
+
+###### CODIGO TEMPERATURA #####
+import math
+
+def temperatura():
+    print('''BIENVENIDO A SU CONVERSOR DE TEMPERATURA, ¿QUÉ DESEA HACER?
+    1. CELSIUS A FAHRENHEIT
+    2. CELSIUS A KELVIN
+    3. FAHRENHEIT A CELSIUS 
+    4. FARENHEIT A KEVIN
+    5. KEVIN A CELSIUS
+    6. KEVIN A FAHRENHEIT 
+    7. SALIR
+    ''')
+    op=int(input(' '))
+    if op==1:
+        c_a_f()
+    elif op==2:
+        c_a_k()
+    elif op==3:
+        f_a_c()
+    elif op==4:
+        f_a_k()
+    elif op==5:
+        k_a_c()
+    elif op==6:
+        k_a_f()
+    elif op==7:
+        print('EL PROGRAMA FINALIZÓ')
+
+def c_a_f():
+    celsius=float(input('INGRESE LOS GRADOS CENTIGRADOS: '))
+    fahrenheit=celsius*(9/5)+32
+    print('Su tempreratura en °F equivale a: ', fahrenheit)
+    op=int(input('''¿DESEA CONVERTIR MÁS DATOS?
+    1. Si
+    2. NO
+    '''))
+    if op==1:
+        return c_a_f()
+    else:
+        return temperatura()
+
+def c_a_k():
+    celsius=float(input('INGRESE LOS GRADOS CENTIGRADOS: '))
+    kelvin=celsius+273.15
+    print('Su tempreratura en °K equivale a: ', kelvin)
+    op=int(input('''¿DESEA CONVERTIR MÁS DATOS?
+    1. Si
+    2. NO
+    '''))
+    if op==1:
+        return c_a_k()
+    else:
+        return temperatura()
+
+def f_a_c():
+    fahrenheit=float(input('INGRESE LOS GRADOS FAHRENHEIT: '))
+    celsius=(fahrenheit-32)*(5/9)
+    print('Su tempreratura en °C equivale a: ', celsius)
+    op=int(input('''¿DESEA CONVERTIR MÁS DATOS?
+    1. Si
+    2. NO
+    '''))
+    if op==1:
+        return f_a_c()
+    else:
+        return temperatura()
+
+def f_a_k():
+    fahrenheit=float(input('INGRESE LOS GRADOS FAHRENHEIT: '))
+    kelvin=(fahrenheit-32)*(5/9)+273.15
+    print('Su tempreratura en °K equivale a: ', kelvin)
+    op=int(input('''¿DESEA CONVERTIR MÁS DATOS?
+    1. Si
+    2. NO
+    '''))
+    if op==1:
+        return f_a_k()
+    else:
+        return temperatura()
+
+
+def k_a_c():
+    kelvin=float(input('INGRESE LOS GRADOS KELVIN: '))
+    celsius=kelvin-273.15
+    print('Su tempreratura en °K equivale a: ', celsius)
+    op=int(input('''¿DESEA CONVERTIR MÁS DATOS?
+    1. Si
+    2. NO
+    '''))
+    if op==1:
+        return k_a_c()
+    else:
+        return temperatura()
+
+
+def k_a_f():
+    kelvin=float(input('INGRESE LOS GRADOS KELVIN: '))
+    fahrenheit=(kelvin-273.15)*(9/5)+32
+    print('Su tempreratura en °F equivale a: ', fahrenheit)
+    op=int(input('''¿DESEA CONVERTIR MÁS DATOS?
+    1. Si
+    2. NO
+    '''))
+    if op==1:
+        return k_a_f()
+    else:
+        return temperatura()
+
+
+a=temperatura()
+print(a)  
+#################################################
+
+####### CODIGO VELOCIDAD ###############################
+import math
+
+def tiempo():
+    print('''BIENVENIDO A SU CONVERSOR DE VELOCIDAD, ¿QUÉ DESEA HACER?
+    1. METROS/SEGUNDOS A KILOMETROS/HORA
+    2. KILOMETROS/HORA A METROS/SEGUNDO
+    3: SALIR
+    ''')
+    op=int(input(' '))
+    if op==1:
+        ms_a_kh()
+    elif op==2:
+        kh_a_ms()
+    elif op==3:
+        print('EL PROGRAMA FINALIZÓ')   
+def ms_a_kh():
+    ms=float(input('INGRESE LOS METROS/SEGUNDOS: '))
+    kh=ms*3.6
+    print('Sus metros/segundos a kilometros/hora equivale a: ', kh)
+    op=int(input('''¿DESEA CONVERTIR MÁS DATOS?
+    1. Si
+    2. NO
+    '''))
+    if op==1:
+        return ms_a_kh()
+    else:
+        return tiempo()
+
+def kh_a_ms():
+    kh=float(input('INGRESE LOS METROS/SEGUNDO: '))
+    ms=kh/3.6
+    print('Sus kilometros/metros a metros/segundo equivale a: ', ms)
+    op=int(input('''¿DESEA CONVERTIR MÁS DATOS?
+    1. Si
+    2. NO
+    '''))
+    if op==1:
+        return kh_a_ms()
+    else:
+        return tiempo()
+
+a=tiempo()
+print(a)  
+######################################
+
+######### CODIGO  VOLUMEN #####################
+import math
+
+def volumen():
+    print('''BIENVENIDO A SU CONVERSOR DE VOLUMEN, ¿QUÉ DESEA HACER?
+    1. LITROS A MILILITROS
+    2. LITROS A METROS CÚBICOS
+    3. MILILITROS A LITROS
+    4. MILILITROS A METROS CÚBICOS 
+    5. METROS CÚBICOS A LITROS
+    6. METROS CÚBICOS A MILILITROS
+    7. SALIR
+    ''')
+    op=int(input(' '))
+    if op==1:
+        l_a_ml()
+    elif op==2:
+        l_a_mc()
+    elif op==3:
+        ml_a_l()
+    elif op==4:
+        ml_a_mc()
+    elif op==5:
+        mc_a_l()
+    elif op==6:
+        mc_a_ml()
+
+def l_a_ml():
+    litros=float(input('INGRESE LOS LITROS: '))
+    mililitros=litros*1000
+    print('Su valor de litros a mililitros equivale a: ', mililitros)
+    op=int(input('''¿DESEA CONVERTIR MÁS DATOS?
+    1. Si
+    2. NO
+    '''))
+    if op==1:
+        return l_a_ml()
+    else:
+        return volumen()
+
+
+def l_a_mc():
+    litros=float(input('INGRESE LOS LITROS: '))
+    metroscubicos=litros/1000
+    print('Su valor de litros a mililitros equivale a: ', metroscubicos)
+    op=int(input('''¿DESEA CONVERTIR MÁS DATOS?
+    1. Si
+    2. NO
+    '''))
+    if op==1:
+        return l_a_mc()
+    else:
+        return volumen()
+
+
+def ml_a_l():
+    mililitros=float(input('INGRESE LOS MILILITROS: '))
+    litros=mililitros/1000
+    print('Su valor de mililitros a litros equivale a: ', litros)
+    op=int(input('''¿DESEA CONVERTIR MÁS DATOS?
+    1. Si
+    2. NO
+    '''))
+    if op==1:
+        return ml_a_l()
+    else:
+        return volumen()
+
+
+def ml_a_mc():
+    mililitros=float(input('INGRESE LOS MILILITROS: '))
+    metroscubicos=(mililitros)/(10^6) 
+    print('Su valor de mililitros a litros equivale a: ', metroscubicos)
+    op=int(input('''¿DESEA CONVERTIR MÁS DATOS?
+    1. Si
+    2. NO
+    '''))
+    if op==1:
+        return ml_a_mc()
+    else:
+        return volumen()
+
+
+def mc_a_l():
+    metroscubicos=float(input('INGRESE LOS METROS CÚBICOS: '))
+    litros=metroscubicos*1000
+    print('Su valor de metros cúbicos a litros equivale a: ', litros)
+    op=int(input('''¿DESEA CONVERTIR MÁS DATOS?
+    1. Si
+    2. NO
+    '''))
+    if op==1:
+        return mc_a_l()
+    else:
+        return volumen()
+
+
+def mc_a_ml():
+    metroscubicos=float(input('INGRESE LOS MILILITROS: '))
+    mililitros=metroscubicos*(10^6) 
+    print('Su valor de metros cúbicos a mililitros equivale a: ', mililitros)
+
+    op=int(input('''¿DESEA CONVERTIR MÁS DATOS?
+    1. Si
+    2. NO
+    '''))
+    if op==1:
+        return mc_a_ml()
+    else:
+        return volumen()
+
+
+
+a=volumen()
+print(a)  
+      
+#########################
+
+
+
+
